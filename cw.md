@@ -87,17 +87,17 @@ PHP, HTML, JavaScript.
 
 ### Алгоритмы
 1. Алгоритм оформления заказа                                                                                                                             
-![](slide/oformlenie.png)
+![](slides/oformlenie.png)
 
 2. Алгоритм добавления товара                                                                         
-![](slide/dobavlenie.png)
+![](slides/dobavlenie.png)
 
 ### Примеры HTTP-запросов
 1. Запросы между пользователем и сервером                                                                                                                           
-![](slide/httpuser.PNG)
+![](slides/httpuser.PNG)
 
 2. Запросы между администратором и сервером                                                                              
-![](slide/httpadmin.PNG)
+![](slides/httpadmin.PNG)
 
 
 
