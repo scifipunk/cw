@@ -1,0 +1,26 @@
+* {
+        
+    color: #8ab9bf;
+}
+
+body {
+    background: #2f3c3d;
+}
+
+textarea {
+    background: #415457;
+    color: #8ab9bf; 
+    resize: none;
+}
+th, td {
+    padding: 10px;
+}
+
+th {
+    background: #415457;
+    color: #8ab9bf;
+}
+
+td {
+    background: #50686b;
+}
