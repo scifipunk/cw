@@ -94,7 +94,7 @@ PHP, HTML, JavaScript.
 
 ### Примеры HTTP-запросов
 1. Запросы между пользователем и сервером                                                                                                                           
-![](slides/httpuser.PNG)
+![](slides/httpuserPNG.PNG)
 
 2. Запросы между администратором и сервером                                                                              
 ![](slides/httpadmin.PNG)
