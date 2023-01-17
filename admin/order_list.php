@@ -46,7 +46,7 @@ require_once 'vendor/connect.php';
     }
 </style>
 <body>
-    <table class="col-5 m-5"  >
+    <table id="table" class="col-5 m-5"  >
         <tr>
             <th>Order number</th>
             <th>Order content</th>
@@ -84,42 +84,54 @@ require_once 'vendor/connect.php';
                         <td><button data-id="<?= $product[0] ?>" id="btn"  class="btn btn-danger">Delete</button>
                         <input type="hidden" id="input<?= $product[0] ?>" name="id" value="<?php echo $product[0]; ?>"></td>
                     </tr>
-                        <script>
-                            
-                                $(document).ready(function() {
-
-                                        $("button").click(function(){
-                                            var postid1 = $(this).data('id');
-                                            
-                                            var id = $("#input" + postid1).val(); 
-                                            
-                                            $.ajax ({
-                                                type: "GET", 
-                                                    url: "vendor/delete_order.php", 
-                                                    dataType: 'html',
-                                                    data: {"id": id}, 
-                                                    cache: false, 
-                                                    success: function(){ 
-                                                        
-                                                        let elems = document.querySelectorAll('#elem' + id);
-                                                        for (let elem of elems) {
-                                                            
-                                                                elem.remove();
-
-                                                        }
-
-                                            }});
-                                    })
-                                    })
-
-                        </script>
+                        
 
                 <?php
             }
 
         ?>
     </table>
+    <script>
+                            
+                            $(document).ready(function() {
 
+                                    $("button").click(function(){
+                                        var postid1 = $(this).data('id');
+                                        
+                                        var id = $("#input" + postid1).val(); 
+                                        
+                                        $.ajax ({
+                                            type: "GET", 
+                                                url: "vendor/delete_order.php", 
+                                                dataType: 'html',
+                                                data: {"id": id}, 
+                                                cache: false, 
+                                                success: function(){ 
+                                                    
+                                                    let elems = document.getElementById('elem' + id);
+                                                                                                       
+                                                    elems.remove();
+
+                                                   
+
+                                        }});
+                                    })
+                                    setInterval(function(){
+                                        $.ajax({
+                                            url:"vendor/realTimeTable.php",
+                                            method: "GET",
+                                            dataType:"text",
+                                            
+                                            success:function(data)
+                                            {
+                                                /* $("#table").html(data); */
+                                                location.reload();
+                                            }
+                                                });
+                                            }, 20000);
+                                        })
+
+                    </script>
     
 
 
